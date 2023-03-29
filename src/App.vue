@@ -35,10 +35,9 @@
             getFigurine() {
                 axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=Blue-Eyes')
                     .then(response => {
+                        console.log(response);
                         this.store.FigurineList = response.data;
-                        this.store.FigurineImage = response.data.card_images;
-                        console.log(this.store.FigurineList);
-                        console.log(this.store.FigurineImage);
+                        console.log(this.store.FigurineList);      
                 });
             }
         },

@@ -1,5 +1,6 @@
 <template>
     <div class="card">
+        <img :src="image" :alt="name">
         <h4>{{name}}</h4>
         <div>{{type}}</div>
     </div>
@@ -16,6 +17,7 @@
             }
         },
         props: {
+            image: String,
             name: String,
             type: String
         }
@@ -24,7 +26,9 @@
 </script>
 
 <style scoped lang="scss">
-    .card {
-        width: calc(100% / 5);
+
+    img {
+        width: 100%;
+        padding: 0 1rem;
     }
 </style>

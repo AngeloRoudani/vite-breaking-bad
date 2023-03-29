@@ -2,11 +2,8 @@
     <div class="container">
         <div class="message">Found card</div>
         <div class="wrapper">
-            <div v-for="(photo, index) in store.FigurineImage" :key="index">
-                <MyCardImage :image="photo.image_url"/>
-            </div>
-            <div v-for="(element, index) in store.FigurineList.data" class="single_card" :key="index"> 
-                <MyCard
+            <div v-for="(element, index) in store.FigurineList.data" class="single_card" :key="index">
+                <MyCard :image="element.card_images[0].image_url"
                         :name="element.name"
                         :type="element.archetype"    
                     />
@@ -18,7 +15,6 @@
 
 <script>
     import MyCard from './MyCard.vue';
-    import MyCardImage from './MyCardImage.vue';
     import {store} from '../store.js';
 
     export default  {
@@ -30,8 +26,7 @@
             }
         },
         components: {
-            MyCard,
-            MyCardImage
+            MyCard
         }
     }
 </script>
@@ -59,5 +54,9 @@
         margin: auto;
         display: flex;
         flex-wrap: wrap;
+    }
+    .single_card {
+        text-align: center;
+        width: calc(100% / 5);
     }
 </style>
