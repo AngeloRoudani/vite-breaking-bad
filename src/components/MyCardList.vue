@@ -46,6 +46,8 @@
         margin: auto;
         color: $color-primary;
         background-color: #212529;
+        font-weight: bold;
+        padding: 10px;
 
     }
 
