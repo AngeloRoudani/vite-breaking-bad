@@ -55,6 +55,8 @@
     }
 
     .wrapper {
+        width: 90%;
+        margin: auto;
         display: flex;
         flex-wrap: wrap;
     }
