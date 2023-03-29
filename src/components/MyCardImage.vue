@@ -1,30 +1,29 @@
 <template>
-    <div class="card">
-        <h4>{{name}}</h4>
-        <div>{{type}}</div>
+    <div class="photo">
+        <img :src="image" :alt="name">
     </div>
 </template>
 
 <script>
     import {store} from '../store.js';
+    
 
     export default  {
-        name: 'MyCard',
+        name: 'MyCardImage',
         data () {
             return {
                 store
             }
         },
         props: {
-            name: String,
-            type: String
+            image: String,  
         }
         
     }
 </script>
 
 <style scoped lang="scss">
-    .card {
+    .photo {
         width: calc(100% / 5);
     }
 </style>
