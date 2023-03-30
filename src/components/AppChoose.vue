@@ -15,7 +15,7 @@
         name: 'AppChoose',
         data() {
             return {
-                store
+                store,
             }
         }
     }

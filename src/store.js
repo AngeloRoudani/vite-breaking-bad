@@ -31,6 +31,6 @@ export const store = reactive(
 
                     }
                     ],
-        selected: '',
+        selected: 'all',
     }
 );
