@@ -1,11 +1,11 @@
 <template>
     
-    <selected @change="$emit('chooseArch')" class="type" :v-model="store.elementArch">
+    <select @change="$emit('chooseArch')" class="type" v-model="store.selected">
         <option v-for="(element, index) in store.Archetype" 
-                :value="element" :key="index">{{element}}
+                :value="element.value" :key="index">{{element.text}}
         </option>
         
-    </selected>
+    </select>
 </template>
 
 <script>
@@ -15,11 +15,8 @@
         name: 'AppChoose',
         data() {
             return {
-                store,
+                store
             }
-        },
-        methods: {
-
         }
     }
 </script>
