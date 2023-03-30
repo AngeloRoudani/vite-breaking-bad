@@ -1,13 +1,23 @@
 <template>
     
-    <selected class="type">
-        <option value="Alien">Alien</option>
+    <selected @change="$emit('chooseArch')" class="type" :v-model="element">
+        <option v-for="(element, index) in store.Archetype" 
+                :value="element" :key="index">{{element}}
+        </option>
+        
     </selected>
 </template>
 
 <script>
+    import {store} from '../store.js';
+
     export default  {
-        name: 'AppChoose'
+        name: 'AppChoose',
+        data() {
+            return {
+                store
+            }
+        },
     }
 </script>
 

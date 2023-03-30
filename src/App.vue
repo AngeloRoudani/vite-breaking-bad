@@ -5,7 +5,7 @@
         </header>
 
         <main>
-            <AppChoose/>
+            <AppChoose @chooseArch="getFigurine"/>
             <MyCardList/>
         </main>
     </body>
@@ -29,27 +29,32 @@
             AppHeader,
             AppChoose,
             MyCardList
-
         },
         methods: {
             getFigurine() {
-                axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=Blue-Eyes')
+                let urlArch = 'https://db.ygoprodeck.com/api/v7/cardinfo.php';
+
+                if (value == 'all') {
+                    urlArch = 'https://db.ygoprodeck.com/api/v7/cardinfo.php';
+                } else {
+                    urlArch += `?archetype=${value}`;
+                }
+                
+                axios.get(urlArch)
                     .then(response => {
-                        console.log(response);
+                        
                         this.store.FigurineList = response.data;
                         console.log(this.store.FigurineList);      
                 });
-            }
+
+            },
         },
         created() {
             this.getFigurine();
         }
     }
-
 </script>
 
 <style lang="scss">
-
 @use './styles/generals.scss';
-
 </style>

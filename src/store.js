@@ -2,6 +2,13 @@ import { reactive } from 'vue';
 
 export const store = reactive(
     {
-        FigurineList: [],   
+        FigurineList: [], 
+        Archetype: [    "all",
+                        "Blue-Eyes",
+                        "Apoqliphort",
+                        "Chaos",
+                        "Cyber",
+                        "Dark Magician"
+                    ]
     }
 );
