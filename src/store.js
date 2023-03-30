@@ -9,6 +9,7 @@ export const store = reactive(
                         "Chaos",
                         "Cyber",
                         "Dark Magician"
-                    ]
+                    ],
+        elementArch: 'all',
     }
 );

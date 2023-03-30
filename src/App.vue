@@ -34,10 +34,10 @@
             getFigurine() {
                 let urlArch = 'https://db.ygoprodeck.com/api/v7/cardinfo.php';
 
-                if (value == 'all') {
+                if (store.elementArch == 'all') {
                     urlArch = 'https://db.ygoprodeck.com/api/v7/cardinfo.php';
                 } else {
-                    urlArch += `?archetype=${value}`;
+                    urlArch += `?archetype=${store.elementArch}`;
                 }
                 
                 axios.get(urlArch)
