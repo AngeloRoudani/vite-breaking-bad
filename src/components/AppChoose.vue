@@ -1,8 +1,9 @@
 <template>
     
     <select @change="$emit('chooseArch')" class="type" v-model="store.selected">
+        <option value="all">all</option>
         <option v-for="(element, index) in store.Archetype" 
-                :value="element.value" :key="index">{{element.text}}
+                :value="element" :key="index">{{element}}
         </option>
         
     </select>

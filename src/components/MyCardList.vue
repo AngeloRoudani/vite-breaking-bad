@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <div class="message">Found card : {{ store.FigurineList.data.length }} </div>
+        <div class="message">Found card : </div>
         <div class="wrapper">
             <div v-for="(element, index) in store.FigurineList.data" class="single_card" :key="index">
                 <MyCard :image="element.card_images[0].image_url"

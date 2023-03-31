@@ -51,9 +51,18 @@
                 });
 
             },
+            getArchetype() {
+                axios.get('https://db.ygoprodeck.com/api/v7/archetypes.php')
+                    .then(response => {
+                        
+                        this.store.Archetype = response;
+                        console.log(this.store.Archetype);      
+                });
+            }
         },
         created() {
             this.getFigurine();
+            this.getArchetype();
         }
     }
 </script>
